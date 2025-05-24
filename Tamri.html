@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ТАМРІ студія масаж</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            background-color: #033315;
+            color: white;
+            font-family: sans-serif;
+            /* padding-top будет установлен JS динамически */
+            padding-top: 0;
+            margin: 0; /* Убираем стандартные отступы body */
+        }
+
+        /* Основной контейнер, который будет иметь рамку и отступы */
+        .page-container {
+            border: 3px solid white;
+            border-radius: .5rem;
+            margin: 0 auto 20px auto; /* Сверху 0, по бокам авто, снизу 20px */
+            max-width: 1300px;
+            background-color: #01270E;
+            overflow: hidden; /* Важно для закругленных углов */
+            /* Убираем верхние закругления, так как их будет имитировать навбар */
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .navbar {
+            background-color: #01270E; /* Тот же цвет, что и у body/page-container */
+            padding-left: 20px;
+            padding-right: 20px;
+
+            position: fixed;
+            top: 0; /* Навбар теперь прилегает к самому верху окна */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%; /* Ширина на 100% от viewport */
+            max-width: 1300px; /* Ограничиваем ширину, как у page-container */
+            z-index: 1030; /* Выше всего остального контента */
+            box-sizing: border-box;
+
+            /* Добавляем закругления только сверху, чтобы навбар выглядел как начало контейнера */
+            border-top-left-radius: .5rem;
+            border-top-right-radius: .5rem;
+            /* Добавляем белую рамку сверху и по бокам */
+            border: 3px solid white;
+            border-bottom: none; /* Убираем нижнюю рамку, чтобы она сливалась с page-container */
+        }
+
+        /* Медиа-запрос для экранов <= 1300px (когда max-width срабатывает) */
+        @media (max-width: 1300px) {
+            .navbar {
+                width: 100%; /* Навбар занимает всю ширину окна */
+                left: 0;
+                transform: translateX(0);
+                border-radius: 0; /* Убираем закругления у навбара */
+                border-bottom: 3px solid white; /* Возвращаем нижнюю рамку */
+                border-left: none; /* Убираем левую рамку */
+                border-right: none; /* Убираем правую рамку */
+            }
+            .page-container {
+                /* На маленьких экранах page-container тоже должен прилегать к краям */
+                max-width: 100%; /* Растягиваем на всю ширину */
+                border-radius: 0; /* Убираем все закругления, так как нет боковых рамок */
+                border-left: none; /* Убираем левую рамку */
+                border-right: none; /* Убираем правую рамку */
+                margin-top: 0; /* Убираем отступ сверху */
+            }
+        }
+        /* Медиа-запрос для очень маленьких экранов */
+        @media (max-width: 768px) {
+            .navbar {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            .section-padded {
+                padding: 30px 15px; /* Меньшие отступы для содержимого на мобильных */
+            }
+        }
+
+        .navbar-nav .nav-link {
+            color: white;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #a5d6a7;
+        }
+
+        .section-padded {
+            padding: 60px 20px;
+        }
+
+        .hero {
+            min-height: 70vh;
+            background: url('images/body.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0;
+            margin-top: 0;
+        }
+
+        .hero-content-wrapper {
+            max-width: 960px;
+            width: 100%;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+        }
+
+        .hero button {
+            margin-top: 20px;
+        }
+
+        .service-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .table td,
+        .table th {
+            background-color: white !important;
+            color: #0d2e24;
+        }
+
+        .contact-info a {
+            color: #a5d6a7;
+            text-decoration: none;
+        }
+
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" id="mainNavbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.jpg" alt="logo" class="img-fluid" style="max-height: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#services">Услуги</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#prices">Цены</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">О нас</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#reviews">Отзывы</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-container">
+
+        <header id="hero" class="section hero">
+            <div class="hero-content-wrapper">
+                <h1>ТАМРІ<br />СТУДІЯ МАСАЖУ</h1>
+                <button class="btn btn-success mt-3">Записаться на массаж</button>
+            </div>
+        </header>
+
+        <section id="services" class="section-padded text-center bg-light text-dark">
+            <div class="container">
+                <h2>Популярные услуги</h2>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="service-icon">👐</div>
+                        <h5>Антицеллюлитный массаж</h5>
+                        <p>Улучшение тонуса и уменьшение отечности.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-icon">🧘‍♀️</div>
+                        <h5>Релакс-массаж</h5>
+                        <p>Снятие стресса и расслабление мышц.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="service-icon">💆</div>
+                        <h5>Мадейротерапия</h5>
+                        <p>Техники массажа лица и тела для восстановления баланса.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prices" class="section-padded">
+            <div class="container text-center">
+                <h2>Цены</h2>
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Услуга</th>
+                                <th>Цена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Классический массаж</td>
+                                <td>650 грн</td>
+                            </tr>
+                            <tr>
+                                <td>Абонемент (5 сеансов)</td>
+                                <td>600 грн/сеанс</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padded">
+            <div class="container">
+                <h2>О студии</h2>
+                <p>Там где массажисты и атмосфера работают в гармонии. Быстро расслабьтесь под опытными руками профессионалов.</p>
+                <img src="images/candle.jpg" alt="Свеча" class="img-fluid mt-3">
+            </div>
+        </section>
+
+        <section id="reviews" class="section-padded bg-light text-dark">
+            <div class="container">
+                <h2>Отзывы</h2>
+                <p>Отличная студия! Профессиональные специалисты, уютная атмосфера.</p>
+            </div>
+        </section>
+
+        <section id="contacts" class="section-padded">
+            <div class="container text-center">
+                <h2>Контакты</h2>
+                <div class="contact-info mt-4">
+                    <p>📍 Адрес: г. Киев, ул. Примерная, 12</p>
+                    <p>📞 Телефон: +38 (097) 123-45-67</p>
+                    <p>📷 <a href="https://www.instagram.com/tamri_massage" target="_blank">Instagram: @tamri_massage</a></p>
+                </div>
+                <div class="mt-4">
+                    <iframe src="https://maps.google.com/maps?q=%D0%BA%D0%B8%D0%B5%D0%B2%20%D1%83%D0%BB%20%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D0%BD%D0%B0%D1%8F%2012&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </div> 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Функция для установки padding-top на body
+            function adjustBodyPadding() {
+                var navbarHeight = $('#mainNavbar').outerHeight();
+                // Устанавливаем padding-top на body, чтобы контент начинался ниже навбара
+                $('body').css('padding-top', navbarHeight + 'px');
+            }
+
+            // Вызываем функцию при загрузке и изменении размера окна
+            adjustBodyPadding();
+            $(window).resize(adjustBodyPadding);
+
+            $('.nav-link').on('click', function (e) {
+                e.preventDefault();
+                var target = $(this).attr('href');
+                var $targetElement = $(target);
+
+                if ($targetElement.length) {
+                    var navbarHeight = $('#mainNavbar').outerHeight();
+                    // Позиция для скролла = верх целевого элемента - высота навбара
+                    var scrollToPosition = $targetElement.offset().top - navbarHeight;
+
+                    $('html, body').animate({
+                        scrollTop: scrollToPosition
+                    }, 7);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
