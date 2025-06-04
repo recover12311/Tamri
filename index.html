@@ -6,370 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ТАМРІ Студія масажу</title>
 
-    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kYpRxrMwPzM_g.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v26/JTUSjIg1_i6t8kYpRxrMwPzM_g.woff2" as="font"
+        type="font/woff2" crossorigin>
 
-    <style>
-        /* CSS Variables */
-        :root {
-            --font-weight-regular: 400;
-            --font-weight-medium: 500;
-            --font-weight-semibold: 600;
-            --font-weight-bold: 700;
-            --font-weight-extra-bold: 900;
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
 
-            --color-primary-dark: #033623; /* Dark green for body background */
-            --color-secondary-dark: #0C2A1E; /* Background for .page-container */
-            --color-accent-dark: #01270E; /* Background for Navbar */
-            --color-light: #F7F3EE; /* Light main text and element color */
-            --color-accent-light: #a5d6a7; /* Light green for hover, links */
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap"
+        rel="stylesheet" />
 
-            --spacing-xs: 0.5rem;
-            --spacing-sm: 1rem;
-            --spacing-md: 1.5rem;
-            --spacing-lg: 2rem;
-            --spacing-xl: 3rem;
-
-            --border-radius-sm: 0.25rem;
-            --border-radius-md: 0.5rem;
-            --border-radius-lg: 10px; /* For table */
-        }
-
-        /* Basic Reset/Normalize (minimal) */
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--color-primary-dark);
-            color: var(--color-light); /* Default text color light for dark background */
-            font-family: 'Montserrat', sans-serif;
-            font-weight: var(--font-weight-regular);
-            margin: 0;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* Headings */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: var(--font-weight-extra-bold) !important;
-            color: var(--color-light); /* Headings are light by default */
-            margin-top: 0;
-            margin-bottom: var(--spacing-sm);
-        }
-        
-        /* Override for sections with light background */
-        .section--light-bg h2, 
-        .section--light-bg h5,
-        .section--light-bg p {
-            color: var(--color-secondary-dark); /* Headings and text on light background are dark */
-        }
-
-        /* Links */
-        a {
-            color: var(--color-accent-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: var(--color-light);
-        }
-
-        /* Page Container */
-        .page-container {
-            border: 3px solid var(--color-light);
-            border-radius: var(--border-radius-md);
-            margin: 0 auto var(--spacing-lg) auto;
-            max-width: 1300px;
-            background-color: var(--color-secondary-dark);
-            overflow: hidden;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Navbar */
-        .navbar {
-            background-color: var(--color-accent-dark);
-            padding: var(--spacing-sm) var(--spacing-lg);
-            position: fixed;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 1300px;
-            z-index: 1030;
-            box-sizing: border-box;
-            border-top-left-radius: var(--border-radius-md);
-            border-top-right-radius: var(--border-radius-md);
-            border: 3px solid var(--color-light);
-            border-bottom: none;
-        }
-
-        .navbar-brand img {
-            max-height: 100px; /* Kept original maximum height */
-            height: auto;
-            width: auto;
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--color-light);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: var(--color-accent-light);
-        }
-
-        .navbar-toggler {
-            border-color: var(--color-light);
-        }
-
-        .navbar-toggler-icon {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28247, 243, 238, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-        }
-
-        /* Section Padding */
-        .section-padded {
-            padding: var(--spacing-xl) var(--spacing-lg);
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            min-height: 80vh;
-            background: url('images/body.jpg') no-repeat center center;
-            background-size: cover; /* Ensure image covers the whole area */
-            color: var(--color-light);
-            padding-top: 100px; /* Adjusted for navbar */
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
-        .hero-section__content {
-            max-width: 960px;
-            width: 100%;
-            padding: 0 var(--spacing-lg);
-        }
-
-        .hero-section h1 {
-            font-size: 4rem;
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .hero-section h2 {
-            font-size: 2.5rem;
-            font-weight: var(--font-weight-semibold) !important;
-        }
-
-        .hero-section .btn {
-            padding: 0.8rem 2.5rem;
-            font-size: 1.25rem;
-            border-radius: var(--border-radius-md);
-            background-color: var(--color-accent-light);
-            border-color: var(--color-accent-light);
-            transition: all 0.3s ease;
-        }
-
-        .hero-section .btn:hover {
-            background-color: var(--color-light);
-            border-color: var(--color-light);
-            color: var(--color-secondary-dark);
-        }
-
-        /* Services Section */
-        .section--light-bg {
-            background-color: var(--color-light);
-        }
-
-        .service-icon {
-            max-width: 150px; /* Kept original max-width from your HTML */
-            height: auto; /* Preserve aspect ratio */
-            margin-bottom: var(--spacing-sm);
-        }
-
-        .text--small {
-            font-size: 0.95rem;
-            font-weight: var(--font-weight-medium);
-            opacity: 0.9;
-        }
-
-        /* Prices Section */
-        .prices-section {
-            padding-top: var(--spacing-xl);
-            padding-bottom: var(--spacing-xl);
-        }
-
-        .price-title {
-            color: var(--color-light);
-        }
-
-        .custom-table {
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: var(--border-radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--color-light);
-            background-color: var(--color-light);
-        }
-
-        .custom-table th,
-        .custom-table td {
-            border: 1px solid var(--color-light);
-            padding: var(--spacing-sm) var(--spacing-md);
-            text-align: center;
-            background-color: var(--color-light);
-            color: var(--color-secondary-dark);
-        }
-
-        .custom-table th {
-            background-color: var(--color-accent-light);
-            color: var(--color-secondary-dark);
-            font-weight: var(--font-weight-bold);
-        }
-
-        /* Table border-radius specific styles */
-        .custom-table th:first-child { border-top-left-radius: var(--border-radius-lg); }
-        .custom-table th:last-child { border-top-right-radius: var(--border-radius-lg); }
-        .custom-table tr:last-child td:first-child { border-bottom-left-radius: var(--border-radius-lg); }
-        .custom-table tr:last-child td:last-child { border-bottom-right-radius: var(--border-radius-lg); }
-
-        /* About Section */
-        .about-section h2, .about-section p {
-            color: var(--color-light);
-        }
-
-        /* Contacts Section */
-        .contacts-section h2 {
-            color: var(--color-light);
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-xs);
-            color: var(--color-light);
-        }
-
-        .contact-info .contact-link {
-            color: var(--color-accent-light);
-            font-weight: var(--font-weight-medium);
-        }
-
-        .contact-info .contact-link:hover {
-            color: var(--color-light);
-        }
-
-        .map-container iframe {
-            border-radius: var(--border-radius-md);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Footer */
-        .footer-section {
-            background-color: var(--color-accent-dark);
-            color: var(--color-light);
-            font-size: 0.9rem;
-            margin-top: 0;
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 1300px) {
-            .navbar {
-                width: 100%;
-                left: 0;
-                transform: translateX(0);
-                border-radius: 0;
-                border-bottom: 3px solid var(--color-light);
-                border-left: none;
-                border-right: none;
-            }
-
-            .page-container {
-                max-width: 100%;
-                border-radius: 0;
-                border-left: none;
-                border-right: none;
-                margin-top: 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .navbar {
-                padding-left: var(--spacing-md);
-                padding-right: var(--spacing-md);
-            }
-
-            .section-padded {
-                padding: var(--spacing-lg) var(--spacing-md);
-            }
-
-            .hero-section h1 {
-                font-size: 3rem;
-            }
-
-            .hero-section h2 {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .prices-section {
-                padding-top: var(--spacing-lg);
-                padding-bottom: var(--spacing-lg);
-            }
-
-            .contact-info p {
-                font-size: 1rem;
-            }
-
-            .navbar-brand img {
-                max-height: 60px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .hero-section .btn {
-                font-size: 1rem;
-                padding: 0.7rem 2rem;
-            }
-
-            .section-padded {
-                padding: var(--spacing-md);
-            }
-
-            .section-title {
-                font-size: 1.75rem;
-            }
-
-            .service-icon {
-                max-width: 100px; /* Adjusting for smaller screens if needed, keeping aspect ratio */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -405,27 +51,65 @@
         <main>
             <section id="services" class="section-padded text-center section--light-bg">
                 <div class="container">
-                    <h2 class="section-title">Популярні послуги</h2>
-                    <div class="row mt-5">
-                        <div class="col-md-4 mb-4">
-                            <img src="images/ACmassage.png" alt="Іконка антицелюлітного масажу" class="service-icon" width="150" height="150" loading="lazy" />
-                            <h5 class="mt-3">Антицелюлітний масаж</h5>
-                            <p class="text--small">Поліпшення тонусу та зменшення набряклості.</p>
+                    <h2 class="section-title">Послуги</h2>
+
+                    <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 mb-4 carousel-item-content">
+                                        <img src="images/ACmassage.png" alt="Іконка антицелюлітного масажу"
+                                            class="service-icon" width="150" height="150" loading="lazy" />
+                                        <h5 class="mt-3">Антицелюлітний масаж</h5>
+                                        <p class="text--small">Поліпшення тонусу та зменшення набряклості.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 mb-4 carousel-item-content">
+                                        <img src="images/RelaxMassage.png" alt="Іконка релакс-масажу"
+                                            class="service-icon" width="150" height="150" loading="lazy" />
+                                        <h5 class="mt-3">Релакс-масаж</h5>
+                                        <p class="text--small">Зняття стресу та розслаблення м'язів.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="row justify-content-center">
+                                    <div class="col-md-4 mb-4 carousel-item-content">
+                                        <img src="images/Madeiro.png" alt="Іконка мадейротерапії" class="service-icon"
+                                            width="150" height="150" loading="lazy" />
+                                        <h5 class="mt-3">Мадейротерапія</h5>
+                                        <p class="text--small">Техніки масажу обличчя та тіла для відновлення балансу.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="images/RelaxMassage.png" alt="Іконка релакс-масажу" class="service-icon" width="150" height="150" loading="lazy" />
-                            <h5 class="mt-3">Релакс-масаж</h5>
-                            <p class="text--small">Зняття стресу та розслаблення м'язів.</p>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <img src="images/Madeiro.png" alt="Іконка мадейротерапії" class="service-icon" width="150" height="150" loading="lazy" />
-                            <h5 class="mt-3">Мадейротерапія</h5>
-                            <p class="text--small">Техніки масажу обличчя та тіла для відновлення балансу.</p>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Попередній</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Наступний</span>
+                        </button>
+
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Слайд 1"></button>
+                            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="1"
+                                aria-label="Слайд 2"></button>
+                            <button type="button" data-bs-target="#servicesCarousel" data-bs-slide-to="2"
+                                aria-label="Слайд 3"></button>
                         </div>
                     </div>
                 </div>
             </section>
-
             <section id="prices" class="section-padded prices-section">
                 <div class="container text-center">
                     <h2 class="section-title price-title">Ціни</h2>
@@ -454,13 +138,31 @@
 
             <section id="about" class="section-padded about-section">
                 <div class="container">
-                    <h2 class="section-title text-center">Про студію</h2>
+                    <h2 class="section-title text-center">Про нас</h2>
                     <div class="row align-items-center mt-5">
                         <div class="col-md-6 order-md-2 mb-4 mb-md-0">
-                            <img src="images/aboutStudio.jpg" alt="Зображення інтер'єру студії" class="img-fluid rounded shadow-sm" width="700" height="400" loading="lazy" />
+                            <img src="images/aboutStudio.jpg" alt="Зображення інтер'єру студії"
+                                class="img-fluid rounded shadow-sm" width="700" height="400" loading="lazy" />
                         </div>
                         <div class="col-md-6 order-md-1">
-                            <p class="text--small mt-4">Там, де масажисти та атмосфера працюють у гармонії. Швидко розслабтеся під досвідченими руками професіоналів. Ми створюємо унікальний простір для вашого відпочинку та відновлення, де кожен масаж – це крок до гармонії тіла та душі. Наші майстри володіють різноманітними техніками, щоб забезпечити індивідуальний підхід до кожного клієнта.</p>
+                            <p class="text--small mt-4">
+                                У кожного з нас бувають моменти, коли хочеться зупинитися, видихнути й просто відчути
+                                себе.<br />
+                                Ми створили «ТАМРІ» саме для таких моментів — коли тіло просить турботи, а душа —
+                                тиші.<br /><br />
+
+                                Це не просто масажна студія. Це місце, де сповільнюється час, зникає напруга, а втома
+                                розчиняється в дбайливих руках майстрів. Ми працюємо не лише з тілом — ми допомагаємо
+                                відчути легкість, ясність, оновлення.<br /><br />
+
+                                Кожна процедура в ТАМРІ — це про індивідуальний підхід, щирість і результат. Ми
+                                поєднуємо класичні та сучасні техніки: ручний масаж, ендосферу, вакуумно-роликові
+                                методики, обгортання — усе, щоб допомогти вам бути в гармонії з собою.<br /><br />
+
+                                Ми не квапимось. Ми слухаємо. Ми відчуваємо.
+                                І кожного разу робимо все, щоб після візиту до ТАМРІ Ви сказали собі:
+                                «Саме цього мені не вистачало».
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -472,12 +174,14 @@
                     <div class="contact-info mt-5">
                         <p>📍 Адреса: м. Полтава, вул. Олександра Бiдного, 1</p>
                         <p>📞 Телефон: <a href="tel:+380971234567" class="contact-link">+38 (097) 123-45-67</a></p>
-                        <p>📷 <a href="https://www.instagram.com/tamri_massage" target="_blank" rel="noopener noreferrer" class="contact-link">Instagram: @tamri_massage</a></p>
+                        <p>📷 <a href="https://www.instagram.com/tamri_massage_studio" target="_blank"
+                                rel="noopener noreferrer" class="contact-link">Instagram: @tamri_massage_studio</a></p>
                     </div>
                     <div class="map-container mt-5">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2572.766752042136!2d34.54019231570701!3d49.57502497936653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d8262b9a7f1a3f%3A0xcb1e2c9e7e7e7e7e!2z0YPQu9C40LLQvdCw0YAg0J7Qs9C40L3QuNC00L7QstCwINCa0LDRgNCw0LLQvtCy0L3QsCwg0L7QvdGW0LXQutCwINCa0LDRgNCw0LLQvtCy0L3QsCwg0J7QvdGW0LXQutCwLCDQrdC60L7QstCwINCQ0LzQvdC-0L3QvdCwINC70L7QvdC-0YDQsNCz0L3QsCwgMzYwMTE!5e0!3m2!1sru!2sua!4v1700000000000!5m2!1sru!2sua"
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34800.69728555326!2d34.54980156228193!3d49.58686190550616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d82ff62b1ed8c9%3A0x6151536b52412c6e!2zwqvQotCQ0JzQoNCGwrsg0KHRgtGD0LTRltGPINCc0LDRgdCw0LbRgyAuINCc0LDRgdCw0LYg0J_QvtC70YLQsNCy0LAgLCDQldCd0JTQntCh0KTQldCg0JAsINCy0LDQutGD0LzQvdC-INGA0L7Qu9C40LrQvtCy0LjQuSDQvNCw0YHQsNC2IC4!5e0!3m2!1sru!2sua!4v1749024744073!5m2!1sru!2sua"
+                            width="100%" height="700" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </section>
@@ -490,57 +194,9 @@
         </footer>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigF/g/6PjL3O/bZtK5b" crossorigin="anonymous" defer></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainNavbar = document.getElementById('mainNavbar');
-            const navbarNav = document.getElementById('navbarNav');
+    <script src="js/bootstrap.bundle.min.js" defer></script>
 
-            // Function to adjust body padding based on navbar height
-            const adjustBodyPadding = () => {
-                if (mainNavbar) {
-                    const navbarHeight = mainNavbar.offsetHeight;
-                    document.body.style.paddingTop = `${navbarHeight}px`;
-                }
-            };
-
-            // Call on page load and window resize
-            adjustBodyPadding();
-            window.addEventListener('resize', adjustBodyPadding);
-
-            // Smooth scroll for navigation links
-            document.querySelectorAll('.nav-link, .scroll-link').forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default anchor click behavior
-
-                    const targetId = this.getAttribute('href'); // Get the target element ID
-                    if (targetId && targetId.startsWith('#')) {
-                        const targetElement = document.querySelector(targetId);
-
-                        if (targetElement) {
-                            const navbarHeight = mainNavbar ? mainNavbar.offsetHeight : 0;
-                            // Calculate scroll position, accounting for fixed navbar
-                            const scrollToPosition = targetElement.getBoundingClientRect().top + window.scrollY - navbarHeight;
-
-                            window.scrollTo({
-                                top: scrollToPosition,
-                                behavior: 'smooth'
-                            });
-
-                            // Close the mobile navigation menu after clicking a link (for Bootstrap's collapse)
-                            if (navbarNav && navbarNav.classList.contains('show')) {
-                                const bsCollapse = new bootstrap.Collapse(navbarNav, {
-                                    toggle: false
-                                });
-                                bsCollapse.hide();
-                            }
-                        }
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="js/scripts.js" defer></script>
 </body>
 
 </html>

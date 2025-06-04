@@ -1,0 +1,442 @@
+/* CSS Variables */
+:root {
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extra-bold: 900;
+
+    --color-primary-dark: #033623;
+    /* Dark green for body background */
+    --color-secondary-dark: #0C2A1E;
+    /* Background for .page-container */
+    --color-accent-dark: #01270E;
+    /* Background for Navbar */
+    --color-light: #F7F3EE;
+    /* Light main text and element color */
+    --color-accent-light: #18a11d;
+    /* Light green for hover, links */
+    --color-table-header: #77c579;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    --border-radius-sm: 0.25rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 10px;
+    /* For table */
+}
+
+/* Basic Reset/Normalize (minimal) */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-primary-dark);
+    color: var(--color-light);
+    /* Default text color light for dark background */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: var(--font-weight-regular);
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Адаптация для карусели услуг */
+#servicesCarousel .carousel-item-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    /* Убедиться, что содержимое занимает всю высоту слайда */
+    padding: var(--spacing-md);
+    /* Добавить немного отступов */
+}
+
+#servicesCarousel .carousel-control-prev,
+#servicesCarousel .carousel-control-next {
+    width: 10%;
+    /* Уменьшаем ширину кнопок */
+    opacity: 0.7;
+    /* Делаем их чуть менее заметными */
+    transition: opacity 0.3s ease;
+}
+
+#servicesCarousel .carousel-control-prev:hover,
+#servicesCarousel .carousel-control-next:hover {
+    opacity: 1;
+    /* Полностью заметны при наведении */
+}
+
+#servicesCarousel .carousel-control-prev-icon,
+#servicesCarousel .carousel-control-next-icon {
+    background-color: var(--color-primary-dark);
+    /* Темный фон для иконок */
+    border-radius: 50%;
+    /* Круглая форма */
+    padding: 1.2rem;
+    /* Увеличить размер иконок */
+    background-size: 50%;
+    /* Увеличить размер стрелок внутри круга */
+}
+
+#servicesCarousel .carousel-indicators button {
+    background-color: var(--color-primary-dark);
+    /* Цвет точек-индикаторов */
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+#servicesCarousel .carousel-indicators button.active {
+    opacity: 1;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: var(--font-weight-extra-bold) !important;
+    color: var(--color-light);
+    /* Headings are light by default */
+    margin-top: 0;
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Override for sections with light background */
+.section--light-bg h2,
+.section--light-bg h5,
+.section--light-bg p {
+    color: var(--color-secondary-dark);
+    /* Headings and text on light background are dark */
+}
+
+/* Links */
+a {
+    color: var(--color-accent-light);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-light);
+}
+
+/* Page Container */
+.page-container {
+    border: 3px solid var(--color-light);
+    border-radius: var(--border-radius-md);
+    margin: 0 auto var(--spacing-lg) auto;
+    max-width: 1300px;
+    background-color: var(--color-secondary-dark);
+    overflow: hidden;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-accent-dark);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 1300px;
+    z-index: 1030;
+    box-sizing: border-box;
+    border-top-left-radius: var(--border-radius-md);
+    border-top-right-radius: var(--border-radius-md);
+    border: 3px solid var(--color-light);
+    border-bottom: none;
+}
+
+.navbar-brand img {
+    max-height: 100px;
+    /* Kept original maximum height */
+    height: auto;
+    width: auto;
+}
+
+.navbar-nav .nav-link {
+    color: var(--color-light);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--color-accent-light);
+}
+
+.navbar-toggler {
+    border-color: var(--color-light);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28247, 243, 238, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Section Padding */
+.section-padded {
+    padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 80vh;
+    background: url('../images/body.jpg') no-repeat center center;
+    background-size: cover;
+    /* Ensure image covers the whole area */
+    color: var(--color-light);
+    padding-top: 100px;
+    /* Adjusted for navbar */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-section__content {
+    max-width: 960px;
+    width: 100%;
+    padding: 0 var(--spacing-lg);
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.hero-section h2 {
+    font-size: 2.5rem;
+    font-weight: var(--font-weight-semibold) !important;
+}
+
+.hero-section .btn {
+    padding: 0.8rem 2.5rem;
+    font-size: 1.25rem;
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-accent-light);
+    border-color: var(--color-accent-light);
+    transition: all 0.3s ease;
+}
+
+.hero-section .btn:hover {
+    background-color: var(--color-light);
+    border-color: var(--color-light);
+    color: var(--color-secondary-dark);
+}
+
+/* Services Section */
+.section--light-bg {
+    background-color: var(--color-light);
+}
+
+.service-icon {
+    max-width: 150px;
+    /* Kept original max-width from your HTML */
+    height: auto;
+    /* Preserve aspect ratio */
+    margin-bottom: var(--spacing-sm);
+}
+
+.text--small {
+    font-size: 0.95rem;
+    font-weight: var(--font-weight-medium);
+    opacity: 0.9;
+}
+
+/* Prices Section */
+.prices-section {
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+}
+
+.price-title {
+    color: var(--color-light);
+}
+
+.custom-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-light);
+    background-color: var(--color-light);
+}
+
+.custom-table th,
+.custom-table td {
+    border: 1px solid var(--color-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    text-align: center;
+    background-color: var(--color-light);
+    color: var(--color-secondary-dark);
+}
+
+.custom-table th {
+    background-color: var(--color-table-header);
+    color: var(--color-secondary-dark);
+    font-weight: var(--font-weight-bold);
+}
+
+/* Table border-radius specific styles */
+.custom-table th:first-child {
+    border-top-left-radius: var(--border-radius-lg);
+}
+
+.custom-table th:last-child {
+    border-top-right-radius: var(--border-radius-lg);
+}
+
+.custom-table tr:last-child td:first-child {
+    border-bottom-left-radius: var(--border-radius-lg);
+}
+
+.custom-table tr:last-child td:last-child {
+    border-bottom-right-radius: var(--border-radius-lg);
+}
+
+/* About Section */
+.about-section h2,
+.about-section p {
+    color: var(--color-light);
+}
+
+/* Contacts Section */
+.contacts-section h2 {
+    color: var(--color-light);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
+    color: var(--color-light);
+}
+
+.contact-info .contact-link {
+    color: var(--color-accent-light);
+    font-weight: var(--font-weight-medium);
+}
+
+.contact-info .contact-link:hover {
+    color: var(--color-light);
+}
+
+.map-container iframe {
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+.footer-section {
+    background-color: var(--color-accent-dark);
+    color: var(--color-light);
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1300px) {
+    .navbar {
+        width: 100%;
+        left: 0;
+        transform: translateX(0);
+        border-radius: 0;
+        border-bottom: 3px solid var(--color-light);
+        border-left: none;
+        border-right: none;
+    }
+
+    .page-container {
+        max-width: 100%;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    .section-padded {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+
+    .hero-section h1 {
+        font-size: 3rem;
+    }
+
+    .hero-section h2 {
+        font-size: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .prices-section {
+        padding-top: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .contact-info p {
+        font-size: 1rem;
+    }
+
+    .navbar-brand img {
+        max-height: 60px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section .btn {
+        font-size: 1rem;
+        padding: 0.7rem 2rem;
+    }
+
+    .section-padded {
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .service-icon {
+        max-width: 100px;
+        /* Adjusting for smaller screens if needed, keeping aspect ratio */
+    }
+}
