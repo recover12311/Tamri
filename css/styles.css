@@ -203,7 +203,7 @@ a:hover {
 /* Hero Section */
 .hero-section {
     min-height: 80vh;
-    background: url('../images/body.jpg') no-repeat center center;
+    background: url('../images/body2.jpg') no-repeat center center;
     background-size: cover;
     /* Ensure image covers the whole area */
     color: var(--color-light);
