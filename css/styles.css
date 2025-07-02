@@ -396,6 +396,23 @@ a:hover {
     margin-top: 0;
 }
 
+.toggle-description {
+    font-size: 1.5rem; /* Увеличить размер стрелки */
+    color: #4a4a4a; /* Цвет стрелки */
+    transition: transform 0.3s ease-in-out; /* Анимация поворота стрелки */
+    padding: 0; /* Убрать отступы по умолчанию */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+/* Если хотите, чтобы стрелка поворачивалась, когда блок открыт */
+.toggle-description[aria-expanded="true"] .bi-chevron-down {
+    transform: rotate(180deg);
+}
+
+.toggle-description[aria-expanded="true"] .bi-chevron-up {
+    transform: rotate(0deg); /* Сброс для 'up' иконки, если используется toggle */
+}
+
 /* Responsive adjustments */
 @media (max-width: 1300px) {
     .navbar {
@@ -481,19 +498,9 @@ a:hover {
     }
 }
 
-.toggle-description {
-    font-size: 1.5rem; /* Увеличить размер стрелки */
-    color: #4a4a4a; /* Цвет стрелки */
-    transition: transform 0.3s ease-in-out; /* Анимация поворота стрелки */
-    padding: 0; /* Убрать отступы по умолчанию */
-    margin-top: 10px; /* Отступ сверху */
-}
-
-/* Если хотите, чтобы стрелка поворачивалась, когда блок открыт */
-.toggle-description[aria-expanded="true"] .bi-chevron-down {
-    transform: rotate(180deg);
-}
-
-.toggle-description[aria-expanded="true"] .bi-chevron-up {
-    transform: rotate(0deg); /* Сброс для 'up' иконки, если используется toggle */
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        padding-left: 1.2rem;
+        padding-right: 1.2rem;
+    }
 }
