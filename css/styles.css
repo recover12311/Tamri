@@ -62,7 +62,7 @@
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
-    --spacing-xl: 3rem;
+    --spacing-xl: 2.5rem;
 
     --border-radius-sm: 0.25rem;
     --border-radius-md: 0.5rem;
@@ -144,7 +144,6 @@ h1,
 h2,
 h3,
 h4,
-h5,
 h6 {
     font-weight: var(--font-weight-extra-bold) !important;
     color: var(--color-light);
@@ -155,6 +154,7 @@ h6 {
 
 /* Override for sections with light background */
 .section--light-bg h2,
+.section--light-bg h3,
 .section--light-bg h5,
 .section--light-bg p {
     color: var(--color-secondary-dark);
@@ -204,7 +204,7 @@ a:hover {
 }
 
 .navbar-brand img {
-    max-height: 100px;
+    max-height: 150px;
     /* Kept original maximum height */
     height: auto;
     width: auto;
@@ -303,7 +303,7 @@ a:hover {
 .text--small {
     font-size: 0.95rem;
     font-weight: var(--font-weight-medium);
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 /* Prices Section */
@@ -411,6 +411,76 @@ a:hover {
 
 .toggle-description[aria-expanded="true"] .bi-chevron-up {
     transform: rotate(0deg); /* Сброс для 'up' иконки, если используется toggle */
+}
+
+.social-buttons {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icon svg,
+.social-icon img {
+  width: 28px;
+  height: 28px;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Цвета по брендам */
+.social-icon.telegram {
+  background-color: #0088cc;
+}
+
+.social-icon.viber {
+  background-color: #7360f2;
+}
+
+.social-icon.viber svg {
+  width: 36px;
+  height: 36px;
+}
+
+.social-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.social-icon.phone {
+  background-color: #28a745;
+}
+
+.social-icon.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.navbar-phone {
+  color: var(--color-light);
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  padding-left: 0.25rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-phone:hover {
+  color: var(--color-accent-light);
 }
 
 /* Responsive adjustments */
