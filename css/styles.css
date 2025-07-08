@@ -1,6 +1,7 @@
 @font-face {
     font-family: 'Montserrat';
-    src: url('../fonts/Montserrat-Regular.ttf') format('truetype'); /* Убедитесь, что путь правильный */
+    src: url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    /* Убедитесь, что путь правильный */
     font-weight: 400;
     font-style: normal;
     font-display: block;
@@ -55,6 +56,7 @@
     --color-light: #ffffff;
     /* Light main text and element color */
     --color-accent-light: #18a11d;
+    --color-button-light: #0d6910;
     /* Light green for hover, links */
     --color-table-header: #77c579;
 
@@ -397,11 +399,16 @@ a:hover {
 }
 
 .toggle-description {
-    font-size: 1.5rem; /* Увеличить размер стрелки */
-    color: #4a4a4a; /* Цвет стрелки */
-    transition: transform 0.3s ease-in-out; /* Анимация поворота стрелки */
-    padding: 0; /* Убрать отступы по умолчанию */
-    margin-top: 10px; /* Отступ сверху */
+    font-size: 1.5rem;
+    /* Увеличить размер стрелки */
+    color: #4a4a4a;
+    /* Цвет стрелки */
+    transition: transform 0.3s ease-in-out;
+    /* Анимация поворота стрелки */
+    padding: 0;
+    /* Убрать отступы по умолчанию */
+    margin-top: 10px;
+    /* Отступ сверху */
 }
 
 /* Если хотите, чтобы стрелка поворачивалась, когда блок открыт */
@@ -410,77 +417,99 @@ a:hover {
 }
 
 .toggle-description[aria-expanded="true"] .bi-chevron-up {
-    transform: rotate(0deg); /* Сброс для 'up' иконки, если используется toggle */
+    transform: rotate(0deg);
+    /* Сброс для 'up' иконки, если используется toggle */
 }
 
 .social-buttons {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .social-icon {
-  width: 60px;
-  height: 60px;
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-  text-decoration: none;
+    width: 60px;
+    height: 60px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-decoration: none;
 }
 
 .social-icon svg,
 .social-icon img {
-  width: 28px;
-  height: 28px;
+    width: 28px;
+    height: 28px;
 }
 
 .social-icon:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
 /* Цвета по брендам */
 .social-icon.telegram {
-  background-color: #0088cc;
+    background-color: #0088cc;
 }
 
 .social-icon.viber {
-  background-color: #7360f2;
+    background-color: #7360f2;
 }
 
 .social-icon.viber svg {
-  width: 36px;
-  height: 36px;
+    width: 36px;
+    height: 36px;
 }
 
 .social-icon svg {
-  width: 30px;
-  height: 30px;
+    width: 30px;
+    height: 30px;
 }
 
 .social-icon.phone {
-  background-color: #28a745;
+    background-color: #28a745;
 }
 
 .social-icon.instagram {
-  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
 }
 
 .navbar-phone {
-  color: var(--color-light);
-  font-weight: 600;
-  font-size: 1.05rem;
-  text-decoration: none;
-  padding-left: 0.25rem;
-  transition: color 0.3s ease;
+    color: var(--color-light);
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding-left: 0.25rem;
+    transition: color 0.3s ease;
 }
 
 .navbar-phone:hover {
-  color: var(--color-accent-light);
+    color: var(--color-accent-light);
+}
+
+.call-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-button-light);
+    color: white;
+    font-size: 2rem;
+    padding: 0.6rem 1rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1050;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.call-button:hover {
+    background-color: var(--color-light);
+    color: var(--color-secondary-dark);
+    transform: scale(1.1);
 }
 
 /* Responsive adjustments */
@@ -564,7 +593,13 @@ a:hover {
 
     .service-icon {
         max-width: 100px;
-        /* Adjusting for smaller screens if needed, keeping aspect ratio */
+    }
+
+    .call-button {
+        font-size: 1.5rem;
+        padding: 0.5rem 0.8rem;
+        bottom: 15px;
+        right: 15px;
     }
 }
 
