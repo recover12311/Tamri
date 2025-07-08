@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tamri.com.ua/sitemap.xml
