@@ -512,6 +512,11 @@ a:hover {
     transform: scale(1.1);
 }
 
+.seo-hidden {
+    position: absolute;
+    left: -9999px;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1300px) {
     .navbar {
