@@ -517,12 +517,6 @@ a:hover {
     left: -9999px;
 }
 
-.price-carousel-img {
-    max-width: 500px;
-    width: 100%;
-    height: auto;
-}
-
 /* Responsive adjustments */
 @media (max-width: 1300px) {
     .navbar {
@@ -577,11 +571,6 @@ a:hover {
 
     .navbar-brand img {
         max-height: 60px;
-    }
-
-    .price-carousel-img {
-        max-width: 100%;
-        padding: 0 1rem;
     }
 }
 
