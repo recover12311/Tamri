@@ -614,3 +614,53 @@ a:hover {
         padding-right: 1.2rem;
     }
 }
+
+.popup-certificate {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 2rem 1rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 90%;
+    width: 500px;
+    transition: opacity 0.3s ease;
+}
+
+.popup-certificate img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+}
+
+.popup-certificate .btn {
+    width: 100%;
+    font-size: 1.25rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.popup-button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

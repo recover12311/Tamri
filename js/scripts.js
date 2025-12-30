@@ -18,6 +18,20 @@ document.addEventListener('DOMContentLoaded', () => {
             interval: 5000, // Автоматическое переключение каждые 5 секунд (по желанию)
             wrap: true // Зациклить карусель
         });
+
+        const popup = document.getElementById("popup-certificate");
+        const closeBtn = popup?.querySelector(".popup-close");
+
+        if (popup && !sessionStorage.getItem("popupClosed")) {
+            popup.style.display = "flex";
+        }
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", function () {
+                popup.style.display = "none";
+                sessionStorage.setItem("popupClosed", "true");
+            });
+        }
     }
 
     // Call on page load and window resize
