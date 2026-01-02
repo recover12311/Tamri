@@ -80,4 +80,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+const popupCertificate = document.getElementById("popup-certificate");
+const popupContacts = document.getElementById("popup-contacts");
+
+const orderBtn = popupCertificate?.querySelector(".btn");
+
+if (orderBtn) {
+    orderBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        popupCertificate.style.display = "none";
+        popupContacts.style.display = "flex";
+    });
+}
+
+document.querySelectorAll(".popup-close").forEach(btn => {
+    btn.addEventListener("click", function () {
+        const popup = this.closest(".popup-certificate");
+        if (popup) popup.style.display = "none";
+    });
+});
+
 });

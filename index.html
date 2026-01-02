@@ -46,15 +46,69 @@
 </head>
 
 <body>
-<div id="popup-certificate" class="popup-certificate">
-    <div class="popup-content">
-        <button class="popup-close" aria-label="Закрити">×</button>
-        <img src="images/cerstificates.jpeg" alt="Подарунковий сертифікат" />
-        <div class="popup-button-wrapper">
-            <a href="#contacts" class="btn btn-success mt-3">Замовити</a>
+    <div id="popup-contacts" class="popup-certificate popup-contacts" style="display: none;">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Закрити">×</button>
+
+            <h3 class="mb-4 text-white">Контакти</h3>
+
+            <div class="contact-info mb-4">
+                <p class="text-white">📞 Телефон:</p>
+                <p>
+                    <a href="tel:+380676597367" class="contact-link text-success fs-5 fw-bold">
+                        +380 (67) 659 73 67
+                    </a>
+                </p>
+            </div>
+
+            <div class="social-buttons d-flex justify-content-center gap-3">
+                <!-- Telegram -->
+                <a href="https://t.me/TamriMassageStudio" class="social-icon telegram" target="_blank"
+                    aria-label="Telegram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" viewBox="0 0 24 24">
+                        <path
+                            d="M9.96 16.57l-.4 3.64c.57 0 .82-.25 1.13-.55l2.7-2.57 5.6 4.1c1.03.57 1.75.27 2.01-.95l3.64-17.09c.38-1.74-.64-2.43-1.72-2.01L.68 9.26C-1.04 9.98-1 10.98.51 11.44l5.9 1.84 13.7-8.63c.65-.4 1.25-.18.76.22" />
+                    </svg>
+                </a>
+
+                <!-- Viber -->
+                <a href="viber://chat?number=%2B380676597367" class="social-icon viber" target="_blank"
+                    aria-label="Viber">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" viewBox="0 0 24 24">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967s-.471-.148-.669.149-.767.967-.94 1.164-.347.223-.644.074c-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059s-.018-.446.13-.594c.134-.133.297-.347.446-.52s.223-.297.334-.495.056-.371-.028-.52c-.083-.148-.748-1.796-1.025-2.462-.27-.649-.542-.561-.669-.57l-.57-.01c-.148 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.1 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.007-1.413.248-.694.248-1.289.173-1.413-.074-.124-.27-.198-.57-.347z" />
+                    </svg>
+                </a>
+
+                <!-- Телефон -->
+                <a href="tel:+380676597367" class="social-icon phone" aria-label="Call">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" viewBox="0 0 24 24">
+                        <path
+                            d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.11-.21c1.21.49 2.53.76 3.89.76.55 0 1 .45 1 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5c.55 0 1 .45 1 1 0 1.36.27 2.68.76 3.89.17.42.07.9-.21 1.11l-2.2 2.2z" />
+                    </svg>
+                </a>
+
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/tamri.massage.studio" class="social-icon instagram" target="_blank"
+                    aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="#ffffff" viewBox="0 0 24 24">
+                        <path
+                            d="M7.5 2h9A5.51 5.51 0 0122 7.5v9A5.51 5.51 0 0116.5 22h-9A5.51 5.51 0 012 16.5v-9A5.51 5.51 0 017.5 2zm0 2A3.5 3.5 0 004 7.5v9A3.5 3.5 0 007.5 20h9a3.5 3.5 0 003.5-3.5v-9A3.5 3.5 0 0016.5 4h-9zm4.5 3a5 5 0 110 10 5 5 0 010-10zm0 2a3 3 0 100 6 3 3 0 000-6zm5.25-.75a.75.75 0 110 1.5.75.75 0 010-1.5z" />
+                    </svg>
+                </a>
+            </div>
         </div>
     </div>
-</div>
+
+    <div id="popup-certificate" class="popup-certificate">
+        <div class="popup-content">
+            <button class="popup-close" aria-label="Закрити">×</button>
+            <img src="images/cerstificates.jpeg" alt="Подарунковий сертифікат" />
+            <div class="popup-button-wrapper">
+                <a href="#contacts" class="btn btn-success mt-3">Замовити</a>
+            </div>
+        </div>
+    </div>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NW7FZCCV" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -457,6 +511,12 @@
                 <div class="container">
                     <h2 class="section-title text-center">Акції</h2>
                     <div class="row justify-content-center mt-5">
+                        <div class="col-12 col-md-6 d-flex justify-content-center">
+                            <img src="images/birthday_discount.jpg"
+                                alt="Акції на масаж в Полтаві на Леваді в студії ТАМРІ"
+                                class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;"
+                                loading="lazy" />
+                        </div>
                         <div class="col-12 col-md-6 d-flex justify-content-center">
                             <img src="images/discount2.webp" alt="Акції на масаж в Полтаві на Леваді в студії ТАМРІ"
                                 class="img-fluid rounded shadow-sm" style="max-width: 100%; height: auto;"
